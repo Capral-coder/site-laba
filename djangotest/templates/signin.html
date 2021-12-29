@@ -1,0 +1,21 @@
+{%extends 'signin_base.html'%}
+{%load static%}
+
+
+{%block signin%}
+<div class="l-form">
+    <form action="{% url 'signin' %}" class="form" method="POST">{% csrf_token %}
+        <h4 class="form__title">Sing in</h4>
+        <h6 class="form__title">{{warning_signin}}</h6>
+        <div class="form__div">
+            <input type="text" class="form__input" placeholder=" " name="login">
+            <label for="" class="form__label">Login</label>
+        </div>
+        <div class="form__div">
+            <input type="password" class="form__input" placeholder=" " name="password">
+            <label for="" class="form__label">Password</label>
+        </div>
+        <input type="submit" class="form__button" value="Sign in">
+    </form>
+</div>
+{%endblock%}

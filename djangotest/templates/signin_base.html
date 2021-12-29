@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en"> 
   <head>
@@ -7,17 +9,13 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{%static 'images/favicon.ico'%}" type="image/x-icon">
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald:200,400%7CLato:300,400,300italic,700%7CMontserrat:900">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style2.css">
-    <link rel="stylesheet" href="css/fonts.css">
-		<!--[if lt IE 10]>
-    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <script src="js/html5shiv.min.js"> </script>
-		<![endif]--> 
+    <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'css/style2.css'%}">
+    <link rel="stylesheet" href="{%static 'css/fonts.css'%}">
   </head>
   <body>
     <div class="page">
@@ -39,11 +37,11 @@
                   <div class="rd-navbar-nav-wrap">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li><a href="index.html">Главная</a>
+                      <li><a href="{% url 'index'%}">Главная</a>
                       </li>
-                      <li class="active"><a href="about-us.html">Заказать</a>
+                      <li><a href="{% url 'purchase'%}">Заказать</a>
                       </li>
-                      <li><a href="contacts.html">Логин</a>
+                      <li class="active"><a href="{%url 'signin'%}">Логин</a>
                       </li>
                     </ul>
                   </div>
@@ -52,35 +50,14 @@
           </nav>
         </div>
       </header>
-      <div class="l-form">
-        <form action="{% url 'purchase' %}" class="form">
-            <h6 class="form__title">Замовлення</h6>
-            <h6 class="form__title">{{purchase_status}}</h6>
-            <div class="form__div">
-                <input type="text" class="form__input" placeholder=" " name="FLS">
-                <label for="" class="form__label">П.І.П.</label>
-            </div>
-            <div class="form__div">
-                <input type="text" class="form__input" placeholder=" " name="subjectname">
-                <label for="" class="form__label">Ім'я предмету</label>
-            </div>
-            <div class="form__div">
-                <input type="text" class="form__input" placeholder=" " name="worknumber">
-                <label for="" class="form__label">Номер роботи</label>
-            </div>
-            <div class="form__div">
-                <input type="text" class="form__input" placeholder=" " name="variant">
-                <label for="" class="form__label">Варіант</label>
-            </div>
-            <input type="submit" class="form__button" value="Замовити">
-        </form>
-      </div>
+      {%block signin%}
+      {%endblock%}
     </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"> </div>
     <!-- Javascript-->
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="{%static 'js/core.min.js'%}"></script>
+    <script src="{%static 'js/script.js'%}"></script>
     <!-- coded by barber-->
   </body>
 </html>

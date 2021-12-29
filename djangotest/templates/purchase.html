@@ -1,0 +1,29 @@
+{%extends 'purchase_base.html'%}
+{%load static%}
+
+
+{%block purchase%}
+<div class="l-form">
+    <form action="{% url 'purchase' %}" class="form" method="POST">{% csrf_token %}
+        <h4 class="form__title">Замовлення</h4>
+        <h6 class="form__title">{{purchase_status}}</h6>
+        <div class="form__div">
+            <input type="text" class="form__input" placeholder=" " name="FLS">
+            <label for="" class="form__label">П.І.П.</label>
+        </div>
+        <div class="form__div">
+            <input type="text" class="form__input" placeholder=" " name="subjectname">
+            <label for="" class="form__label">Ім'я предмету</label>
+        </div>
+        <div class="form__div">
+            <input type="text" class="form__input" placeholder=" " name="worknumber">
+            <label for="" class="form__label">Номер роботи</label>
+        </div>
+        <div class="form__div">
+            <input type="text" class="form__input" placeholder=" " name="variant">
+            <label for="" class="form__label">Варіант</label>
+        </div>
+        <input type="submit" class="form__button" value="Замовити">
+    </form>
+</div>
+{%endblock%}

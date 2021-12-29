@@ -1,0 +1,45 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css'%}">
+    <title>Sign up</title>
+</head>
+<body>
+    <div class="l-form">
+        <form action="{% url 'signup' %}" class="form" method="POST">{% csrf_token %}
+            <h1 class="form__title">Sing up</h1>
+            <h4 class="form__title">{{warning_signup}}</h4>
+            <div class="form__div">
+                <input type="text" class="form__input" placeholder=" " name="lastname">
+                <label for="" class="form__label">Прізвище</label>
+            </div>
+            <div class="form__div">
+                <input type="text" class="form__input" placeholder=" " name="firstname">
+                <label for="" class="form__label">Ім'я</label>
+            </div>
+            <div class="form__div">
+                <input type="text" class="form__input" placeholder=" " name="surname">
+                <label for="" class="form__label">По батькові</label>
+            </div>
+            <div class="form__div">
+                <input type="email" class="form__input" placeholder=" " name="email">
+                <label for="" class="form__label">Пошта</label>
+            </div>
+            <div class="form__div">
+                <input type="password" class="form__input" placeholder=" " name="password">
+                <label for="" class="form__label">Пароль</label>
+            </div>
+            <div class="form__div">
+                <input type="password" class="form__input" placeholder=" " name="passwordagain">
+                <label for="" class="form__label">Повторити пароль</label>
+            </div>
+            <input type="submit" class="form__button" value="Sign up">
+        </form>
+    </div>
+   
+</body>
+</html>

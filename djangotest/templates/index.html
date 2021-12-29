@@ -1,3 +1,5 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en"> 
   <head>
@@ -7,19 +9,15 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.ico'%}" type="image/x-icon">
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald:200,400%7CLato:300,400,300italic,700%7CMontserrat:900">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fonts.css">
-		<!--[if lt IE 10]>
-    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <script src="js/html5shiv.min.js"> </script>
-		<![endif]--> 
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/fonts.css'%}">
   </head>
   <body>
-    <div class="page">
+    <div>
       <!-- Page Header-->
       <header class="section page-header">
         <!-- RD Navbar-->
@@ -38,11 +36,11 @@
                   <div class="rd-navbar-nav-wrap">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="active"><a href="index.html">Главная</a>
+                      <li class="active"><a href="{% url 'index'%}">Главная</a>
                       </li>
-                      <li><a href="about-us.html">Заказать</a>
+                      <li><a href="{% url 'purchase'%}">Заказать</a>
                       </li>
-                      <li><a href="contacts.html">Логин</a>
+                      <li><a href="{% url 'signin'%}">Логин</a>
                       </li>
                     </ul>
                   </div>
@@ -57,7 +55,7 @@
          <!-- Swiper-->
           <div class="swiper-container swiper-slider swiper-slider_height-1 swiper-align-left swiper-align-left-custom context-dark bg-gray-darker" data-loop="false" data-autoplay="5500" data-simulate-touch="false" data-slide-effect="fade">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" data-slide-bg="images/swiper-slide-1.jpg">
+              <div class="swiper-slide" data-slide-bg="{% static 'images/swiper-slide-1.jpg'%}">
                 <div class="swiper-slide-caption">
                   <div class="container container-bigger swiper-main-section">
                     <div class="row row-fix justify-content-sm-center justify-content-md-start">
@@ -70,20 +68,20 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide" data-slide-bg="images/swiper-slide-2.jpg">
+              <div class="swiper-slide" data-slide-bg="{% static 'images/swiper-slide-2.jpg'%}">
                 <div class="swiper-slide-caption">
                   <div class="container container-bigger swiper-main-section">
                     <div class="row row-fix justify-content-sm-center justify-content-md-start">
                       <div class="col-md-6 col-lg-5 col-xl-4 col-xxl-5">
                         <h3>Делаем быстро</h3>
                         <div class="divider divider-decorate"></div>
-                        <p class="text-spacing-sm">Мы делаем все максимально в сроки и если мы не успеваем мы возрощаем заказчику 15% от стоимости заказа и делаем скидку на следующий заказю</p>
+                        <p class="text-spacing-sm">Мы делаем все максимально в сроки и если мы не успеваем мы возрощаем заказчику 15% от стоимости заказа и делаем скидку на следующий заказ</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide" data-slide-bg="images/swiper-slide-3.jpg">
+              <div class="swiper-slide" data-slide-bg="{% static 'images/swiper-slide-3.jpg'%}">
                 <div class="swiper-slide-caption">
                   <div class="container container-bigger swiper-main-section">
                     <div class="row row-fix justify-content-sm-center justify-content-md-start">
@@ -123,9 +121,9 @@
               <!-- Owl Carousel-->
               <div class="owl-carousel owl-carousel-team owl-carousel-inset" data-items="1" data-md-items="2" data-xl-items="3" data-stage-padding="15" data-loop="true" data-margin="30" data-mouse-drag="false" data-dots="true" data-autoplay="true">
               </article>
-              <article class="post-blog"><a class="gallery-item titled-gallery-item" href="\images\landing-private-airlines-7-570x415.jpg" data-lightgallery="item">
+              <article class="post-blog"><a class="gallery-item titled-gallery-item" href="{% static '\images\landing-private-airlines-7-570x415.jpg'%}" data-lightgallery="item">
                 <div class="gallery-item-image">
-                  <figure><img src="\images\landing-private-airlines-7-570x415.jpg" alt="" width="570" height="380"/>
+                  <figure><img src="{% static '\images\landing-private-airlines-7-570x415.jpg'%}" alt="" width="570" height="380"/>
                   </figure>
                   <div class="caption">
                   </div>
@@ -133,7 +131,7 @@
                 <div class="post-blog-caption">
                   <div class="post-blog-caption-header">
                     <ul class="post-blog-tags">
-                      <li><a class="button-tags" href="\images\landing-private-airlines-7-570x415.jpg">Отчет за месяц</a></li>
+                      <li><a class="button-tags" href="{% static '\images\landing-private-airlines-7-570x415.jpg'%}">Отчет за месяц</a></li>
                     </ul>
                   </div>
                   <div class="post-blog-caption-body">
@@ -141,9 +139,9 @@
                   </div>
                 </div>
               </article>
-                <article class="post-blog"><a class="gallery-item titled-gallery-item" href="\images\landing-private-airlines-8-570x415.jpg" data-lightgallery="item">
+                <article class="post-blog"><a class="gallery-item titled-gallery-item" href="{% static '\images\landing-private-airlines-8-570x415.jpg'%}" data-lightgallery="item">
                   <div class="gallery-item-image">
-                    <figure><img src="\images\landing-private-airlines-8-570x415.jpg" alt="" width="570" height="380"/>
+                    <figure><img src="{% static '\images\landing-private-airlines-8-570x415.jpg'%}" alt="" width="570" height="380"/>
                     </figure>
                     <div class="caption">
                     </div>
@@ -151,7 +149,7 @@
                   <div class="post-blog-caption">
                     <div class="post-blog-caption-header">
                       <ul class="post-blog-tags">
-                        <li><a class="button-tags" href="\images\landing-private-airlines-8-570x415.jpg">Отчет за месяц</a></li>
+                        <li><a class="button-tags" href="{% static '\images\landing-private-airlines-8-570x415.jpg'%}">Отчет за месяц</a></li>
                       </ul>
                     </div>
                     <div class="post-blog-caption-body">
@@ -160,9 +158,9 @@
                   </div>
                 </article>
               </article>
-              <article class="post-blog"><a class="gallery-item titled-gallery-item" href="\images\landing-private-airlines-9-570x415.jpg" data-lightgallery="item">
+              <article class="post-blog"><a class="gallery-item titled-gallery-item" href="{% static '\images\landing-private-airlines-9-570x415.jpg'%}" data-lightgallery="item">
                 <div class="gallery-item-image">
-                  <figure><img src="\images\landing-private-airlines-9-570x415.jpg" alt="" width="570" height="380"/>
+                  <figure><img src="{% static '\images\landing-private-airlines-9-570x415.jpg'%}" alt="" width="570" height="380"/>
                   </figure>
                   <div class="caption">
                   </div>
@@ -170,7 +168,7 @@
                 <div class="post-blog-caption">
                   <div class="post-blog-caption-header">
                     <ul class="post-blog-tags">
-                      <li><a class="button-tags" href="\images\landing-private-airlines-9-570x415.jpg">Отчет за месяц</a></li>
+                      <li><a class="button-tags" href="{% static '\images\landing-private-airlines-9-570x415.jpg'%}">Отчет за месяц</a></li>
                     </ul>
                   </div>
                   <div class="post-blog-caption-body">
@@ -187,8 +185,8 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"> </div>
     <!-- Javascript-->
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="{% static 'js/core.min.js'%}"></script>
+    <script src="{% static 'js/script.js'%}"></script>
     <!-- coded by barber-->
   </body>
 </html>
